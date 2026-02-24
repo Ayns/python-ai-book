@@ -1,0 +1,10 @@
+openai
+anthropic
+python-dotenv
+pandas
+requests
+beautifulsoup4
+chromadb
+streamlit
+schedule
+matplotlib
