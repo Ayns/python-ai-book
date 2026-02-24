@@ -1,0 +1,4 @@
+Hi team, the server went down at 3 AM last night and we lost 2 hours of data.
+The backup system failed because the disk was full. We need to increase storage
+immediately and set up monitoring alerts. This is blocking the client demo
+scheduled for Friday.

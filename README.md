@@ -1,84 +1,140 @@
 # Python + AI: From Zero to Building Intelligent Applications
 
-> Complete code repository for the book by **Ayyanar**
+**Complete code for the book by Ayyanar**
 
-## What This Book Covers
+Every chapter's code — from `print("Hello, World!")` to AI-powered web apps.
 
-| Part | Chapters | What You Build |
-|------|----------|----------------|
-| **Part 1: Python Foundations** | Ch 1-6 | Greeting Generator, Calculator, Guessing Game, Contact Book, Password Tool, Expense Tracker |
-| **Part 2: Intermediate Python** | Ch 7-11 | Library System, Weather Dashboard, Sales Analyzer, Quote Scraper, Task Manager |
-| **Part 3: AI with Python** | Ch 12-17 | AI Chatbot, AI Assistant, Research Assistant, Document Chat, Content Pipeline |
-| **Part 4: Capstone Projects** | Ch 18-21 | AI Finance Tracker, Document Q&A System, AI Web App (deployed) |
+---
 
-## Quick Start
+## 📁 Repository Structure
 
+```
+chapter-01-welcome-to-python/        # print, variables, input, f-strings
+chapter-02-variables-types-operators/ # data types, operators, calculator
+chapter-03-control-flow/             # if/else, loops, guessing game
+chapter-04-data-structures/          # lists, dicts, tuples, sets, contact book
+chapter-05-functions-modules/        # functions, *args, modules, password tool
+chapter-06-files-error-handling/     # files, CSV, JSON, try/except, expense tracker
+chapter-07-oop/                      # classes, inheritance, library system
+chapter-08-apis/                     # HTTP requests, weather dashboard
+chapter-09-pandas/                   # DataFrames, data analysis
+chapter-10-web-scraping/             # BeautifulSoup, price tracker
+chapter-11-databases/                # SQLite, task manager
+chapter-12-understanding-ai/         # AI concepts, tokens, cost estimation
+chapter-13-first-ai-app/            # OpenAI API, chatbot, streaming, vision
+chapter-14-prompt-engineering/       # prompting, JSON output, AI assistant
+chapter-15-ai-tools/                # function calling, agents, research assistant
+chapter-16-rag/                     # embeddings, ChromaDB, document chat
+chapter-17-automation/              # batch processing, pipelines
+chapter-18-capstone-finance/        # AI expense tracker with auto-categorization
+chapter-19-capstone-doc-qa/         # multi-document Q&A with RAG
+chapter-20-capstone-streamlit/      # AI web app with Streamlit
+chapter-21-whats-next/              # Ollama, career roadmap
+```
+
+---
+
+## 🚀 Quick Start
+
+### Part 1–2 (Chapters 1–11): No setup needed
 ```bash
-# Clone the repo
-git clone https://github.com/ayyanar/python-ai-book.git
-cd python-ai-book
-
-# For Part 1-2 (no extra dependencies)
-python ch01_welcome/hello.py
-
-# For Part 3-4 (AI projects)
-pip install -r requirements.txt
-cp .env.example .env
-# Add your API key to .env
+# Just run any file with Python 3.10+
+python chapter-01-welcome-to-python/greeting.py
+python chapter-03-control-flow/guessing_game.py
+python chapter-06-files-error-handling/expense_tracker.py
 ```
 
-## Setup
+### Part 3–4 (Chapters 12–21): AI chapters need an API key
+```bash
+# 1. Install dependencies
+pip install openai python-dotenv
 
-### Python
-Download from [python.org](https://www.python.org/downloads/). Version 3.10+ recommended.
+# 2. Create a .env file in the chapter folder
+echo "OPENAI_API_KEY=your-key-here" > chapter-13-first-ai-app/.env
 
-### VS Code
-Download from [code.visualstudio.com](https://code.visualstudio.com/). Install the Python extension.
-
-### API Keys (Part 3-4 only)
-1. Get an OpenAI key at [platform.openai.com](https://platform.openai.com)
-2. Copy `.env.example` to `.env`
-3. Add your key
-
-## Repository Structure
-
-```
-python-ai-book/
-├── ch01_welcome/          # Hello World, Greeting Generator
-├── ch02_variables/        # Calculator
-├── ch03_control_flow/     # Guessing Game
-├── ch04_data_structures/  # Contact Book
-├── ch05_functions/        # Password Generator
-├── ch06_files/            # Expense Tracker
-├── ch07_oop/              # Library Management System
-├── ch08_apis/             # Weather Dashboard
-├── ch09_pandas/           # Sales Analyzer
-├── ch10_scraping/         # Quote Scraper
-├── ch11_databases/        # Task Manager
-├── ch12_ai_concepts/      # (Conceptual - no code)
-├── ch13_first_ai_app/     # AI Chatbot
-├── ch14_prompt_engineering/ # AI Assistant
-├── ch15_ai_tools/         # Research Assistant
-├── ch16_rag/              # Document Chat
-├── ch17_automation/       # Content Pipeline
-├── ch18_finance_tracker/  # AI Finance Tracker (capstone)
-├── ch19_document_qa/      # Document Q&A System (capstone)
-├── ch20_streamlit_app/    # AI Web App (capstone)
-├── requirements.txt
-├── .env.example
-└── .gitignore
+# 3. Run
+python chapter-13-first-ai-app/chatbot.py
 ```
 
-## Get the Book
+---
 
-- **Amazon Kindle**: $9.99 / ₹499
-- **Amazon Paperback**: $24.99 / ₹1,299
-- **Gumroad PDF**: [link]
+## 📦 Requirements by Chapter
 
-## Found an Issue?
+| Chapters | Packages | Install |
+|----------|----------|---------|
+| 1–7, 11–12 | None (standard library only) | — |
+| 8 | requests | `pip install requests` |
+| 9 | pandas | `pip install pandas` |
+| 10 | beautifulsoup4, requests | `pip install beautifulsoup4 requests` |
+| 13–15, 17–18 | openai, python-dotenv | `pip install openai python-dotenv` |
+| 16, 19 | openai, chromadb, python-dotenv | `pip install openai chromadb python-dotenv` |
+| 20 | streamlit, openai, python-dotenv | `pip install streamlit openai python-dotenv` |
 
-Open an issue on this repository. Pull requests welcome.
+Or install everything at once:
+```bash
+pip install openai python-dotenv pandas requests beautifulsoup4 chromadb streamlit schedule
+```
 
-## License
+---
 
-Code in this repository is MIT licensed. The book content is copyrighted.
+## 🔑 API Key Setup
+
+Chapters 13–21 require an OpenAI API key:
+
+1. Get your key at [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+2. Copy `.env.example` to `.env` in the chapter folder
+3. Add your key: `OPENAI_API_KEY=sk-...`
+
+> ⚠️ **Never commit your `.env` file.** The `.gitignore` already excludes it.
+
+---
+
+## 📚 Chapter Projects
+
+| Ch | Project | What It Does |
+|----|---------|-------------|
+| 1 | Greeting Generator | Interactive greeting with age calculation |
+| 2 | Calculator | Four operations with division-by-zero handling |
+| 3 | Guessing Game | Random number game with 7 attempts and scoring |
+| 4 | Contact Book | Add, search, delete contacts with dictionaries |
+| 5 | Password Tool | Generate and check password strength |
+| 6 | Expense Tracker | Track expenses with CSV persistence |
+| 7 | Library System | OOP-based book lending system |
+| 8 | Weather Dashboard | Live weather data from API |
+| 9 | Sales Analyzer | Pandas-powered data analysis |
+| 10 | Price Tracker | Web scraping with Beautiful Soup |
+| 11 | Task Manager | SQLite-backed todo application |
+| 13 | AI Chatbot | Terminal chatbot with conversation history |
+| 14 | AI Assistant | Summarizer, translator, data extractor, code reviewer |
+| 15 | Research Assistant | AI-powered text analysis and report generation |
+| 16 | Document Chat | RAG pipeline — chat with your .txt files |
+| 17 | Automation Pipeline | Batch AI processing with logging |
+| 18 | Finance Tracker | AI auto-categorizes expenses + spending insights |
+| 19 | Document Q&A | Multi-document RAG with source citations |
+| 20 | Streamlit App | Full web app: chat, summarize, translate, extract |
+
+---
+
+## 🐍 Python Version
+
+Requires **Python 3.10+**. Tested with Python 3.12 and 3.13.
+
+---
+
+## 📖 About the Book
+
+*Python + AI: From Zero to Building Intelligent Applications* takes you from absolute beginner to building AI-powered applications across 21 chapters and 4 parts.
+
+Available on Amazon KDP and Gumroad.
+
+---
+
+## 🐛 Found a Bug?
+
+Open an issue on this repository. Include the chapter number and the error message.
+
+---
+
+## 📜 License
+
+Code in this repository is provided for educational purposes as companion material to the book.
